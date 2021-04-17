@@ -46,7 +46,11 @@ var data_handle = (nofollow,data, maxnumber) => {
   var listlenth = data[1].length;
   var user_lenth = data[0].length;
   var datalist_slice = slice_month(datalist);
-  var last_update_time = timezoon(datalist_slice);
+  if (datalist_slice.length!=0){
+    var last_update_time = timezoon(datalist_slice);
+  } else {
+    var last_update_time = "无";
+  }
   var link_list = [];
   for (var item of data[1]) {
     if (item[1] === today) {
